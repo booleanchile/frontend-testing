@@ -4,22 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server src",
+    "test": "jest --config jest.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "html-loader-jest": "^0.2.1",
+    "http-server": "^0.12.3",
     "jest": "^26.0.1"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "html"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.html?$": "html-loader-jest"
-    }
   }
 }

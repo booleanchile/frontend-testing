@@ -40,3 +40,5 @@ const checkoutModule = {
 	},
 };
 $( document ).ready( checkoutModule.init );
+
+window.checkoutModule = checkoutModule;
