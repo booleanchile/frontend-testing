@@ -1,0 +1,25 @@
+{
+  "name": "frontend-testing",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-loader-jest": "^0.2.1",
+    "jest": "^26.0.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "html"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.html?$": "html-loader-jest"
+    }
+  }
+}
