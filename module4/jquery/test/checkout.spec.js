@@ -21,7 +21,7 @@ require('../src/checkout');
 */
 const template = require('./templates/checkout.spec.html');
 
-describe('Checkout page', function(){
+describe('Checkout page', () => {
 	/*
 		Función que se ejecutará una única vez.
 		En este caso la utilizamos para reemplazar el comportamiento original de la función

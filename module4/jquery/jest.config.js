@@ -2,6 +2,7 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.js",
+    "student/**/*.js",
     "!src/**/*.min.js",
     "!**/node_modules/**",
   ],
