@@ -19,3 +19,55 @@ Programa completo [aquí](https://drive.google.com/open?id=1pz9LCqUx2sgtuk0cekVu
 3) Hacer cambios en la lógica del código para entender como mantener los snapshots en el repositorio.
 
 #### Actividades para el alumno 👨🏻‍💻
+
+El alumno debe resolver el siguiente ejercicio utilizando la información del siguiente Codepen:
+  https://codepen.io/booleanchile/pen/MWKWqNx
+y siguiendo las instrucciones creando archivos dentro de la carpeta `student`
+
+- Crear un archivo `users-dashboard.js` con el contenido del archivo Javascript en Codepen
+- Crear un archivo `users-dashboard.html` con el contenido del
+archivo HTML en Codepen
+- Re-factorizar el código Javascript para poder aplicarle pruebas
+- Implementar Snapshot testing e implementar 2 pruebas en un archivo `users-dashboard.spec.js`
+
+```javascript
+  describe('Users Dashboard', () => {
+
+  });
+
+```
+
+Nota: Utilizar el siguiente código para poder intervenir las llamadas Ajax
+```javascript
+beforeAll(() => {
+  // Llamada GET
+  const users = [
+    { name: 'Jaco Pastorious', email: 'jaco@fusion.org', username: 'jacobassist'},
+    { name: 'Luis Alberto Spinetta', email: 'laspinetta@fusion.org', usernam: 'elflaco' },
+  ];
+  jest.spyOn(window.$, 'ajax')
+    .mockReturnValue({
+      /*
+        Obligamos a que el callback pasado a la función
+        se ejecute con la lista de usuarios
+      */
+      done: (callback) => callback(users)
+    })
+  
+  // llamada POST
+  jest.spyOn(window.$, 'post')
+    .mockImplementation((url, data) => {
+      /*
+        Obligamos a que el callback pasado a la función
+        se ejecute con la data pasada con un Id
+      */
+      const responseData = {
+        id: users.length,
+        ...data
+      };
+      return {
+        done: (callback) => callback(responseData)
+      };
+    })
+});
+```

@@ -1,3 +1,4 @@
+// Código jQuery refactorizado para hacerlo testeable
 const checkoutModule = {
 	init: () => {
 		//Page states and selectors
@@ -23,7 +24,7 @@ const checkoutModule = {
 		const confirmationSelector = checkoutModule.steps.confirmation.selector;
 		const formSelector = checkoutModule.steps.confirmation.formSelector;
 
-		$(confirmationSelector).addClass('checkout__confirmation--active');	
+		$(confirmationSelector).addClass('checkout__confirmation--active');
 		$(formSelector)
 			.on('submit', checkoutModule.onSubmit);
 	},
@@ -61,3 +62,33 @@ const checkoutModule = {
 $( document ).ready( checkoutModule.init );
 
 window.checkoutModule = checkoutModule;
+
+// Código jQuery sin estructurar
+// $(document).ready(function () {
+//   $('.checkout__resume button[type="button"]').on("click", function () {
+//     $(".checkout__confirmation").addClass("checkout__confirmation--active");
+//   });
+//   $(".checkout__confirmation form").on("submit", function () {
+//     $.ajax({
+//       url: "https://my-endpoint",
+//       type: "POST",
+//       data: {
+//         instructor: $('.checkout__confirmation .confirmation__instructor-selection').val(),
+//         course: $('.checkout__confirmation .confirmation__instructor-course-selection').val(),
+//       },
+//       success: () => {
+//         $('.checkout__confirmation .confirmation__instructor-result')
+//           .text("datos enviados correctamente")
+//           .addClass("confirmation__instructor-result--active");
+//       },
+//       error: () => {
+//         $('.checkout__confirmation .confirmation__instructor-result')
+//           .text("datos no pudieron ser enviados")
+//           .addClass("confirmation__instructor-result--active");
+//       },
+//     });
+
+//     $event.preventDefault();
+//     return false;
+//   });
+// });
