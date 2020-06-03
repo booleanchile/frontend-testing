@@ -1,0 +1,27 @@
+.checkout {
+  display: flex;
+}
+.checkout__resume, .checkout__confirmation {
+  padding: 20px;
+}
+.checkout__resume button {
+  cursor: pointer;
+}
+.checkout__confirmation {
+  display: none;
+}
+.checkout__confirmation select{
+  margin-bottom: 20px;
+}
+.checkout__confirmation--active {
+  display: block;
+}
+.checkout__confirmation--active fieldset{
+  display: flex;
+}
+.checkout__confirmation .confirmation__instructor-result {
+  display: none;
+}
+.checkout__confirmation .confirmation__instructor-result--active {
+  display: block;
+}

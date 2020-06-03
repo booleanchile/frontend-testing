@@ -1,0 +1,74 @@
+<!doctype html>
+ <html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Boolean Chile</title>
+    <base href="/">
+    <meta name="description" content="Boolean Chile: Cursos de habilidades digitales para todos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Css example for exercise  -->
+    <link rel="stylesheet" href="checkout.css">
+  </head>
+  <body>
+    <header>
+      <div class="header__top">
+        <div class="brand__logo"></div>
+      </div>
+      <div class="header__bottom">
+        <h1 class="title">Pruebas de Software para Frontend</h1>
+        <h2 class="subtitle">Módulo 4 “Pruebas de Integración”</h2>
+      </div>
+    </header>
+    <main class="content">
+      <section class="checkout">
+        <div class="checkout__resume">
+          <h2>Resumen de tu compra</h2>
+          <div>
+            <h3>Pruebas de Integración en Frontend</h3>
+            <div>
+              <h4>Plan Básico</h4>
+              <ul>
+                <li> 6 clases de 1 hr</li>
+                <li> Videollamada 1:1</li>
+                <li> Chat personalizado para preguntas</li>
+                <li> 1 Profesor dedicado experto en el tópico del programa</li>
+                <li> Material Audiovisual y en formato PDF</li>
+                <li> Evaluación e Informe de resultado</li>
+              </ul>
+              <button type="button" data-course-plan="custom">Reservar Hora</button>
+            </div>
+          </div>
+        </div>
+        <div class="checkout__confirmation">
+          <h2>Selecciona la hora disponible</h2>
+          <div>
+            <form>
+              <fieldset>
+                <label for="instructor-selection">Elige a tu profesor</label>
+                <select name="" id="instructor-selection" class="confirmation__instructor-selection">
+                  <option>Selecciona un profesor</option>
+                  <option value="gonzalo">Gonzalo Pincheira</option>
+                  <option value="camilo">Camilo Flores</option>
+                </select>
+                <label for="instructor-course">Selecciona un curso</label>
+                <select name="" id="instructor-course" class="confirmation__instructor-course-selection">
+                  <option>Selecciona un curso</option>
+                  <option value="angular">Angular</option>
+                  <option value="vue">Vue</option>
+                </select>
+                <button type="submit">Enviar Solicitud</button>
+              </fieldset>
+            </form>
+            <div class="confirmation__instructor-result"></div>
+          </div>
+        </div>
+      </section>	
+    </main>
+
+    <script src="assets/lib/jquery.min.js"></script>
+    <script src="checkout.js"></script>
+  </body>
+</html>

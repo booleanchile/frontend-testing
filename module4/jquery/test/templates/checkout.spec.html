@@ -1,0 +1,43 @@
+<section class="checkout">
+	<div class="checkout__resume">
+		<h2>Resumen de tu compra</h2>
+		<div>
+			<h3>Pruebas de Integración en Frontend</h3>
+			<div>
+				<h4>Plan Básico</h4>
+				<ul>
+					<li> 6 clases de 1 hr</li>
+					<li> Videollamada 1:1</li>
+					<li> Chat personalizado para preguntas</li>
+					<li> 1 Profesor dedicado experto en el tópico del programa</li>
+					<li> Material Audiovisual y en formato PDF</li>
+					<li> Evaluación e Informe de resultado</li>
+				</ul>
+				<button type="button" data-course-plan="custom">Reservar Hora</button>
+			</div>
+		</div>
+	</div>
+	<div class="checkout__confirmation">
+		<h2>Selecciona la hora disponible</h2>
+		<div>
+			<form>
+				<fieldset>
+					<label for="instructor-selection">Elige a tu profesor</label>
+					<select name="" id="instructor-selection" class="confirmation__instructor-selection">
+						<option>Selecciona un profesor</option>
+						<option value="gonzalo">Gonzalo Pincheira</option>
+						<option value="camilo">Camilo Flores</option>
+					</select>
+					<label for="instructor-course">Selecciona un curso</label>
+					<select name="" id="instructor-course" class="confirmation__instructor-course-selection">
+						<option>Selecciona un curso</option>
+						<option value="angular">Angular</option>
+						<option value="vue">Vue</option>
+					</select>
+					<button type="submit">Enviar Solicitud</button>
+				</fieldset>
+			</form>
+			<div class="confirmation__instructor-result"></div>
+		</div>
+	</div>
+</section>	
