@@ -28,46 +28,24 @@ y siguiendo las instrucciones creando archivos dentro de la carpeta `student`
 - Crear un archivo `users-dashboard.html` con el contenido del
 archivo HTML en Codepen
 - Re-factorizar el código Javascript para poder aplicarle pruebas
-- Implementar Snapshot testing e implementar 2 pruebas en un archivo `users-dashboard.spec.js`
+- Implementar Snapshot testing e implementar 2 pruebas en el archivo `users-dashboard.spec.js`
 
 ```javascript
   describe('Users Dashboard', () => {
-
-  });
-
-```
-
-Nota: Utilizar el siguiente código para poder intervenir las llamadas Ajax
-```javascript
-beforeAll(() => {
-  // Llamada GET
-  const users = [
-    { name: 'Jaco Pastorious', email: 'jaco@fusion.org', username: 'jacobassist'},
-    { name: 'Luis Alberto Spinetta', email: 'laspinetta@fusion.org', usernam: 'elflaco' },
-  ];
-  jest.spyOn(window.$, 'ajax')
-    .mockReturnValue({
+    it('should set error on fields when try to submit without set fields', () => {
       /*
-        Obligamos a que el callback pasado a la función
-        se ejecute con la lista de usuarios
+        Ejecuta las acciones necesarias para hacer submit del formulario sin agregar datos
+        y luego utilizar el método aprendido para generar un snapshot
+        Al revisar el snapshot creado deberiamos ver los input con la clase
+        `validation-failed`
       */
-      done: (callback) => callback(users)
-    })
-  
-  // llamada POST
-  jest.spyOn(window.$, 'post')
-    .mockImplementation((url, data) => {
+    });
+
+    it('should submit and add to the list the user', () => {
       /*
-        Obligamos a que el callback pasado a la función
-        se ejecute con la data pasada con un Id
+        Ejecuta las acciones necesarias para hacer submit del formulario agregando los datos necesarios y luego utilizar el método aprendido para generar un snapshot
+        Al revisar el snapshot creado deberiamos ver el nuevo usuario en el div
+        con la clase `users`
       */
-      const responseData = {
-        id: users.length,
-        ...data
-      };
-      return {
-        done: (callback) => callback(responseData)
-      };
-    })
-});
+    });
 ```
